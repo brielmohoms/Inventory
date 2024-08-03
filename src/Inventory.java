@@ -6,17 +6,26 @@ public class Inventory {
 
     ArrayList<Product> products;
 
-    //Constructor
+    /**
+     * Constructor
+     */
     public Inventory() {
         this.products = new ArrayList<>();
     }
 
-    //adds a product in the inventory
+    /**
+     * adds a product in the inventory
+     * @param product the product to add
+     */
     public void addProduct(Product product){
         products.add(product);
     }
 
-    //removes a product given the id, we get true when it is done and false if that is not the case
+    /**
+     * removes a product given the id, we get true when it is done and false if that is not the case
+     * @param productId the Id of the product to remove
+     * @return true if successful and false if not
+     */
     public boolean removeProduct(int productId) {
         for (Product p : products) {
             if (p.getProductId() == productId) {
@@ -27,7 +36,11 @@ public class Inventory {
         return false;
     }
 
-    //looks for a product, given the id and null when not found
+    /**
+     * looks for a product, given the id and null when not found
+     * @param productId
+     * @return
+     */
     public Product findProductById(int productId){
         for(Product p : products){
             if(p.getProductId() == productId){
@@ -37,7 +50,11 @@ public class Inventory {
         return null;
     }
 
-    //here we get a List of products of a specific category
+    /**
+     * here we get a List of products of a specific category
+     * @param category
+     * @return
+     */
     public List<Product> findProductsByCategory(String category){
         List<Product> finalList = new ArrayList<>();
         for(Product p : products){
@@ -49,12 +66,17 @@ public class Inventory {
         return null;
     }
 
-    //here we get a List of all products
+    /**
+     * here we get a List of all products
+     * @return
+     */
     public List<Product> getAllProducts(){
         return new ArrayList<>(products);
     }
 
-    //Sort die products the in inventory depending on the name
+    /**
+     * Sort die products the in inventory depending on the name
+     */
     public void sortProductsByName(){
         Collections.sort(products, new Comparator<Product>(){
             @Override
@@ -64,7 +86,9 @@ public class Inventory {
         });
     }
 
-    //Sort die products the in inventory depending on the price
+    /**
+     * Sort die products the in inventory depending on the price
+     */
     public void sortProductsByPrice(){
         Collections.sort(products, new Comparator<Product>() {
             @Override
@@ -74,7 +98,11 @@ public class Inventory {
         });
     }
 
-    //gives a list of products whose quantity is below a certain threshold value
+    /**
+     * gives a list of products whose quantity is below a certain threshold value
+     * @param threshold
+     * @return
+     */
     public List<Product> getLowStockProducts(int threshold){
         List<Product> finalList = new ArrayList<>();
         for(Product product : products){
@@ -85,7 +113,11 @@ public class Inventory {
         return finalList;
     }
 
-    //gives a list of products that fulfill a predicate
+    /**
+     * gives a list of products that fulfill a predicate
+     * @param predicate
+     * @return
+     */
     public List<Product> filterProducts(Predicate<Product> predicate){
         List<Product> finalList = new ArrayList<>();
         for(Product product : products){
@@ -96,7 +128,10 @@ public class Inventory {
         return finalList;
     }
 
-    //applies an operation to all products in the inventory
+    /**
+     * applies an operation to all products in the inventory
+     * @param consumer
+     */
     public void applyToProducts(Consumer<Product> consumer){
         for(Product product : products){
             consumer.accept(product);
