@@ -23,9 +23,9 @@ public class Inventory {
     }
 
     /**
-     * removes a product given the id, we get true when it is done and false if that is not the case
+     * Removes a product given the ID, we get true when it is done and false if not(not found)
      *
-     * @param productId the Id of the product to remove
+     * @param productId the ID of the product to remove
      * @return true if successful and false if not
      */
     public boolean removeProduct(int productId) {
@@ -39,7 +39,7 @@ public class Inventory {
     }
 
     /**
-     * looks for a product, given the id and null when not found
+     * looks for a product, given the ID and null when not found
      *
      * @param productId the product ID of the product to be found
      * @return the product if found and null if not found
@@ -54,7 +54,7 @@ public class Inventory {
     }
 
     /**
-     * here we get a List of products of a specific category
+     * here we get a list of products of a specific category
      *
      * @param category the category to be listed
      * @return the category if found and null if not found or empty
@@ -116,7 +116,6 @@ public class Inventory {
     }
 
     /**
-     *
      * @param predicate the predicate each product must fulfill
      * @return a list of products that fulfill a certain predicate
      */
