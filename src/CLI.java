@@ -11,18 +11,17 @@ public class CLI {
         while (true) {
 
             System.out.println(" ===== MENU ===== ");
-
-            System.out.println("1. Produkt hinzufügen");
-            System.out.println("2. Produkt entfernen");
-            System.out.println("3. Produkt nach ID suchen");
-            System.out.println("4. Produkt nach Kategorie anzeigen");
-            System.out.println("5. Alle Produkte anzeigen");
-            System.out.println("6. Produkt nach Namen sortieren");
-            System.out.println("7. Produkt nach Preis sortieren");
-            System.out.println("8. Produkt mit niedrigen Lagerbeständen anzeigen");
-            System.out.println("9. Produkt nach benutzerdefinierten Filter anzeigen");
-            System.out.println("10. Preise aller Produkte um einen Prozentsatz erhöhen");
-            System.out.println("11. Programm beenden");
+            System.out.println("1. Add product");
+            System.out.println("2. Remove product");
+            System.out.println("3. Search product by ID");
+            System.out.println("4. Search product by category");
+            System.out.println("5. Show all products");
+            System.out.println("6. Sort product by name");
+            System.out.println("7. Sort product by price");
+            System.out.println("8. Show product with small threshold value");
+            System.out.println("9. Show product by custom filter");
+            System.out.println("10. Increase prices of all products by a percentage");
+            System.out.println("11. End program");
 
             System.out.println("--------------------------");
 

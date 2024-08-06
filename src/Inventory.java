@@ -15,6 +15,7 @@ public class Inventory {
 
     /**
      * adds a product in the inventory
+     *
      * @param product the product to add
      */
     public void addProduct(Product product){
@@ -23,6 +24,7 @@ public class Inventory {
 
     /**
      * removes a product given the id, we get true when it is done and false if that is not the case
+     *
      * @param productId the Id of the product to remove
      * @return true if successful and false if not
      */
@@ -38,8 +40,9 @@ public class Inventory {
 
     /**
      * looks for a product, given the id and null when not found
-     * @param productId
-     * @return
+     *
+     * @param productId the product ID of the product to be found
+     * @return the product if found and null if not found
      */
     public Product findProductById(int productId){
         for(Product p : products){
@@ -52,8 +55,9 @@ public class Inventory {
 
     /**
      * here we get a List of products of a specific category
-     * @param category
-     * @return
+     *
+     * @param category the category to be listed
+     * @return the category if found and null if not found or empty
      */
     public List<Product> findProductsByCategory(String category){
         List<Product> finalList = new ArrayList<>();
@@ -64,11 +68,10 @@ public class Inventory {
             }
         }
         return null;
-    }
+    } //TODO fix it returns the first element with the category but should return a list
 
     /**
-     * here we get a List of all products
-     * @return
+     * @return a list of all the products
      */
     public List<Product> getAllProducts(){
         return new ArrayList<>(products);
@@ -99,9 +102,8 @@ public class Inventory {
     }
 
     /**
-     * gives a list of products whose quantity is below a certain threshold value
-     * @param threshold
-     * @return
+     * @param threshold given threshold value
+     * @return a list of products whose quantity is below a certain threshold value
      */
     public List<Product> getLowStockProducts(int threshold){
         List<Product> finalList = new ArrayList<>();
@@ -114,9 +116,9 @@ public class Inventory {
     }
 
     /**
-     * gives a list of products that fulfill a predicate
-     * @param predicate
-     * @return
+     *
+     * @param predicate the predicate each product must fulfill
+     * @return a list of products that fulfill a certain predicate
      */
     public List<Product> filterProducts(Predicate<Product> predicate){
         List<Product> finalList = new ArrayList<>();
@@ -130,6 +132,7 @@ public class Inventory {
 
     /**
      * applies an operation to all products in the inventory
+     *
      * @param consumer
      */
     public void applyToProducts(Consumer<Product> consumer){
